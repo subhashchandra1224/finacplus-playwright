@@ -12,7 +12,7 @@ const config = require('../../config/config');
  *
  * Required environment variables:
  *   REQRES_PROJECT_KEY  — manage key (pro_* prefix) from https://app.reqres.in/api-keys
- *   REQRES_COLLECTION   — collection slug (default: "products")
+ *   REQRES_COLLECTION   — collection slug (default: "users")
  *
  * Workflow:
  *   POST   /api/collections/{slug}/records        → 201, dynamic id returned
@@ -45,8 +45,8 @@ test.describe('ReqRes API — Create → Get Created User → Update', () => {
         'Steps:\n' +
         '  1. Go to https://app.reqres.in → your project → API Keys\n' +
         '  2. Copy the MANAGE key (pro_* prefix)\n' +
-        '  3. Set: REQRES_PROJECT_KEY=pro_xxxx\n' +
-        '  4. Set: REQRES_COLLECTION=products'
+        '  4. Set: REQRES_PROJECT_KEY=pro_xxxx\n' +
+        '  5. Set: REQRES_COLLECTION=users'
       );
     }
   });
