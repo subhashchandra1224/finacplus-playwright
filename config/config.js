@@ -19,7 +19,7 @@ const config = {
   reqres: {
     baseUrl:    'https://reqres.in',
     projectKey: process.env.REQRES_PROJECT_KEY || '',
-    collection: process.env.REQRES_COLLECTION  || 'products'
+    collection: process.env.REQRES_COLLECTION  || 'users'
   },
   bookSearch: {
     title: 'Learning JavaScript Design Patterns'
