@@ -1,15 +1,13 @@
 /**
  * Central configuration.
- * All credentials are read from environment variables — never committed.
+ * Loads .env file if present, then reads from environment variables.
  *
- * Windows PowerShell:
- *   $env:DEMOQA_USERNAME="..."; $env:DEMOQA_PASSWORD="..."
- *   $env:REQRES_PROJECT_KEY="pro_..."; $env:REQRES_COLLECTION="products"
- *   npx playwright test
- *
- * Mac/Linux:
- *   DEMOQA_USERNAME=... DEMOQA_PASSWORD=... REQRES_PROJECT_KEY=pro_... REQRES_COLLECTION=products npx playwright test
+ * Setup:
+ *   cp .env.example .env
+ *   Fill in your values, then run: npx playwright test
  */
+require('dotenv').config();
+
 const config = {
   demoqa: {
     baseUrl:  'https://demoqa.com',

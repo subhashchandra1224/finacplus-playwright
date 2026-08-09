@@ -78,23 +78,39 @@ cp .env.example .env
 | `DEMOQA_USERNAME`    | DemoQA username — create account manually at https://demoqa.com/register |
 | `DEMOQA_PASSWORD`    | DemoQA password |
 | `REQRES_PROJECT_KEY` | ReqRes manage key (`pro_*` prefix) — from https://app.reqres.in/api-keys |
-| `REQRES_COLLECTION`  | Collection slug — starter project includes `products` by default |
+| `REQRES_COLLECTION`  | Collection slug — create a `users` collection at https://app.reqres.in/collections |
 
 ### Step 3 — Getting your ReqRes project key
 
 1. Sign up or log in at **https://app.reqres.in**
 2. Open your project → **API Keys**
 3. Copy the **MANAGE key** (`pro_*` prefix)
-4. Set `REQRES_PROJECT_KEY=pro_xxxx` and `REQRES_COLLECTION=products`
+4. Set `REQRES_PROJECT_KEY=pro_xxxx` and `REQRES_COLLECTION=users`
 
 ### Running with environment variables
+
+Create a `.env` file from the example and fill in your values:
+
+```bash
+cp .env.example .env
+# Edit .env with your real credentials
+```
+
+Then simply run:
+```bash
+npx playwright test
+```
+
+The project uses `dotenv` — it automatically loads `.env` when present. No extra flags needed.
+
+Alternatively, set variables inline:
 
 **Windows PowerShell:**
 ```powershell
 $env:DEMOQA_USERNAME="your_username"
 $env:DEMOQA_PASSWORD="your_password"
 $env:REQRES_PROJECT_KEY="pro_your_key"
-$env:REQRES_COLLECTION="products"
+$env:REQRES_COLLECTION="users"
 npx playwright test
 ```
 
@@ -103,7 +119,7 @@ npx playwright test
 DEMOQA_USERNAME=your_username \
 DEMOQA_PASSWORD=your_password \
 REQRES_PROJECT_KEY=pro_your_key \
-REQRES_COLLECTION=products \
+REQRES_COLLECTION=users \
 npx playwright test
 ```
 
