@@ -39,6 +39,8 @@ test.describe('ReqRes API — Create → Get Created User → Update', () => {
 
   // Guard — fail immediately with a clear message if project key is missing
   test.beforeAll(() => {
+    console.log(`[CONFIG] collection = ${config.reqres.collection}`);
+    console.log(`[CONFIG] baseUrl    = ${config.reqres.baseUrl}`);
     if (!config.reqres.projectKey) {
       throw new Error(
         'REQRES_PROJECT_KEY is not set.\n\n' +
