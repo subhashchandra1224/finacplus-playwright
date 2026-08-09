@@ -150,8 +150,7 @@ Records created via POST are genuinely persisted and retrievable via GET with th
 | GET created user | `GET /api/collections/{slug}/records/{id}` | Status 200; `id` equals POST id; `name` = "FinacPlus QA"; `job` = "Automation Engineer" |
 | PUT — update user | `PUT /api/collections/{slug}/records/{id}` | Status 200; `name` = "FinacPlus QA Updated"; `job` = "Senior Automation Engineer" |
 
-All three tests use the **same dynamic ID** returned by POST — no hardcoded IDs.
-After all tests complete, the record is deleted (`afterAll` cleanup).
+All API operations (POST, GET, PUT, DELETE cleanup) use the same dynamically created record ID — no hardcoded IDs are used.
 
 ### API details
 
