@@ -97,17 +97,23 @@ REQRES_PROJECT_KEY=pro_your_project_key
 REQRES_COLLECTION=products
 ```
 
-Then run with dotenv-cli:
-```bash
-npx dotenv -e .env -- npx playwright test
-```
+Then set the variables in your shell before running:
 
-Or set environment variables directly in PowerShell:
+**Windows PowerShell:**
 ```powershell
 $env:DEMOQA_USERNAME="your_username"
 $env:DEMOQA_PASSWORD="your_password"
 $env:REQRES_PROJECT_KEY="pro_your_key"
 $env:REQRES_COLLECTION="products"
+npx playwright test
+```
+
+**Mac/Linux:**
+```bash
+DEMOQA_USERNAME=your_username \
+DEMOQA_PASSWORD=your_password \
+REQRES_PROJECT_KEY=pro_your_key \
+REQRES_COLLECTION=products \
 npx playwright test
 ```
 
@@ -167,11 +173,17 @@ DELETE /api/collections/{slug}/records/{id}   (cleanup)
 Headers required:
   x-api-key: <REQRES_PROJECT_KEY>
   Content-Type: application/json
-  X-Reqres-Env: prod
 
 Body format:
   { "data": { "name": "...", "job": "..." } }
 ```
+
+### Note on collection name
+
+The reqres.in starter project includes a `products` collection by default.
+The assignment requires storing `name` and `job` fields — these are stored inside
+the collection record's `data` field regardless of the collection name.
+The collection acts as the persistence layer; the field names satisfy the assignment requirement.
 
 ---
 
