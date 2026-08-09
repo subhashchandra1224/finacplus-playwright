@@ -1,0 +1,8 @@
+node_modules/
+playwright-report/
+test-results/
+test-output/*
+!test-output/book-details.txt
+.env
+*.log
+.DS_Store

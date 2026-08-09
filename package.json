@@ -1,0 +1,14 @@
+{
+  "name": "finacplus-playwright",
+  "version": "1.0.0",
+  "description": "FinacPlus QA Automation Assignment — Playwright (JS)",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test tests/ui",
+    "test:api": "playwright test tests/api",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.45.3"
+  }
+}
